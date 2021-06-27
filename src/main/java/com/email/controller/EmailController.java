@@ -1,5 +1,8 @@
 package com.email.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.email.dto.EmailDto;
 import com.email.model.Email;
 import com.email.service.EmailService;
@@ -21,6 +24,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/email")
 public class EmailController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmailController.class);
 
     private EmailService emailService;
 

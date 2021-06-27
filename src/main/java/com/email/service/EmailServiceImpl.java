@@ -3,12 +3,14 @@ package com.email.service;
 import com.email.dto.EmailDto;
 import com.email.model.Email;
 import com.email.repository.EmailRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import javax.transaction.Transactional;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -20,6 +22,8 @@ import java.util.List;
  */
 @Service
 public class EmailServiceImpl implements EmailService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmailServiceImpl.class);
 
     /**
      * The Email repository.
