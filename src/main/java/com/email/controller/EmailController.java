@@ -39,13 +39,14 @@ public class EmailController {
     }
 
     /**
-     * Gets emails.
+     * Gets emails from DB.
      *
      * @return the emails
      */
     @GetMapping
     public ResponseEntity<List<EmailDto>> getEmails() {
         try {
+            LOGGER.info("Retrieving email list from DB");
             return new ResponseEntity<>(emailService.retrieveAllSavedEmails(), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -53,7 +54,7 @@ public class EmailController {
     }
 
     /**
-     * Save email response entity.
+     * Test API to save emails manually
      *
      * @param emailDto the email dto
      * @return the response entity
@@ -61,7 +62,6 @@ public class EmailController {
     @PostMapping
     public ResponseEntity<List<EmailDto>> saveEmail(@RequestBody EmailDto emailDto) {
         try {
-
             emailService.saveEmail(Email.builder()
                     .from(emailDto.getFrom())
                     .subject(emailDto.getSubject())

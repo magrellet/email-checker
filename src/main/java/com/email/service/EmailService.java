@@ -3,6 +3,7 @@ package com.email.service;
 import com.email.dto.EmailDto;
 import com.email.model.Email;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 /**
@@ -31,4 +32,9 @@ public interface EmailService {
      * @return the list
      */
     List<EmailDto> retrieveAllSavedEmails();
+
+    /**
+     * Schedule email check.
+     */
+    void scheduleEmailCheck() throws MessagingException;
 }
