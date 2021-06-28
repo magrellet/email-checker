@@ -9,8 +9,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class EmailApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(EmailApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(EmailApplication.class, args);
+    }
 
 }

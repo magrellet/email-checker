@@ -59,7 +59,7 @@ public class EmailServiceImpl implements EmailService {
     @Value("${mail.pwd}")
     private String pwd;
 
-    @Value("${mail.search.term}")
+    @Value("${mail.search.term:ALL}")
     private String searchTerm;
 
     @Value("${mail.word.to.search}")
@@ -94,7 +94,7 @@ public class EmailServiceImpl implements EmailService {
         if (!isAlreadySaved(email)) {
             LOGGER.info("Saving Email in DB");
             emailRepository.save(email);
-        }else{
+        } else {
             LOGGER.info("Email already exist in DB! Subject: {} - From: {} - Date: {}"
                     , email.getSubject(), email.getFrom(), email.getDate());
         }
