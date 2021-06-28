@@ -14,10 +14,11 @@ the steps are in the Pre Requisites section
 
 **Pre Requisites**
 --------
-- In order to run this application, you will need to have installed Maven and Java 11 in your machine.
+- In order to run this application, you will need to have installed git, Maven and Java 11 in your machine.
 - In order to get emails from gmail, you need to go to this gmail page 
   https://www.google.com/settings/security/lesssecureapps and enable unsecure access
   ![Scheme](images/allow-unsecure.png)
+- Clone the code from the following url: https://github.com/magrellet/email-checker  
 - Some pre-configuration needs to be added in the application properties file (located inside /src/main/resources).
   By default, host, protocol, port, etc are already set, but you need to add your email 
   account and your password. Also, as I mention above, by default is set to read "unseen" messages.
@@ -49,7 +50,6 @@ we need just to call GET http://localhost:8080/api/email with no headers or para
 - If you are going to run the application using an IDE, you will need to install a plugin for
 Lombok library in order to be able to detect Lombok Annotations. For example, for IntelliJ IDEA:
   ![Scheme](images/lombok-plugin.png)
-- Clone the code from this url: 
 - To Run the application using an IDE, you need to set some configurations in order to download the 
 dependencies and run the application.
 
